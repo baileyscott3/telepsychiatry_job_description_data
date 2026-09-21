@@ -1,0 +1,14 @@
+---
+title: "telepsychiatry_sample_data"
+author: "Bailey Scott"
+date: "2026-09-21"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# Turn off scientific notation
+options(scipen=999)
+```
+
+## 
