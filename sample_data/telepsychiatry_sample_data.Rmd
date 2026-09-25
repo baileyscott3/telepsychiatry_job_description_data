@@ -7,6 +7,37 @@ output: html_document
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
+# Turn off scientific notation
+options(scipen=999)
+
+# Load tidyverse  
+# install.packages('tidyverse')
+library(tidyverse)
+library(lubridate)
 ```
 
 ## 
+
+```{r}
+job_records_sample <- read_csv("job-records-sample.csv")
+job_descriptions_sample <- read_csv("job-descriptions-sample.csv")
+```
+
+```{r}
+#filter by the word phone?
+phone_descriptions <- job_descriptions_sample |> filter(str_detect(description, "phone"))
+
+#filter job_records for health-related stuff
+health_job_records <- job_records_sample |> filter(str_detect(title, "Health"))
+```
+
+```{r}
+job_records_sample |> 
+  mutate(year = floor_date(created, "year")) |> 
+  group_by(year) |> 
+  summarise(
+    count = n()
+  )
+
+```
