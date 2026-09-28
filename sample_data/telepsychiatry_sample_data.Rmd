@@ -22,6 +22,7 @@ library(lubridate)
 ```{r}
 job_records_sample <- read_csv("job-records-sample.csv")
 job_descriptions_sample <- read_csv("job-descriptions-sample.csv")
+remote_tag_sample <- read_csv("remote-tag-sample.csv")
 ```
 
 ```{r}
